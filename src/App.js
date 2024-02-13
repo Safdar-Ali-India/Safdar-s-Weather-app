@@ -1,8 +1,10 @@
 import React from 'react'
-
+import Temp from './Components/weather/temp'
 const App = () => {
   return (
-    <div>App</div>
+   <>
+   <Temp />
+   </>
   )
 }
 
