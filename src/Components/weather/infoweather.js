@@ -1,6 +1,20 @@
 import React from 'react'
 
-const Infoweather = () => {
+const Infoweather = ({temperInfo}) => {
+
+const{temp,
+    humidity,
+    pressure,
+    weatherone,
+    name,
+    speed,
+    country,
+    sunset} = temperInfo; 
+// converting seconds into time
+let sec = sunset;
+let date = new Date(sec*1000);
+let timeStr = `${date.getHours()}:${date.getMinutes()}`;
+
   return (
     <>
     {/* Our Temperature Card */}
@@ -13,14 +27,14 @@ const Infoweather = () => {
 </div>
 <div className="weatherInfo">
 <div className="temperature">
-<span> 31.5 &deg; </span>
+<span> {temp} &deg; </span>
 </div>
 <div className="description">
 <div className="weatherCondition">
 Sunny
 </div>
 <div className="place">
-Jamshedpur, India
+{name}, {country}
 
 </div>
 
@@ -39,7 +53,7 @@ Jamshedpur, India
 <div className="two-sided-section">
     <p><i className={"wi wi-sunset"}></i></p>
  <p className="extra-info-leftside">
-    19 : 19 PM <br />
+    {timeStr} PM <br />
 
 Sunset
  </p>
@@ -47,7 +61,7 @@ Sunset
 <div className="two-sided-section">
     <p><i className={"wi wi-humidity"}></i></p>
  <p className="extra-info-leftside">
-    19 : 19 PM <br />
+    {humidity} PM <br />
 
     Humidity
  </p>
@@ -58,7 +72,7 @@ Sunset
  <div className="two-sided-section">
     <p><i className={"wi wi-rain"}></i></p>
  <p className="extra-info-leftside">
-    19 : 19 PM <br />
+    {pressure} PM <br />
 
   Pressure
  </p>
@@ -66,7 +80,7 @@ Sunset
 <div className="two-sided-section">
     <p><i className={"wi wi-strong-wind"}></i></p>
  <p className="extra-info-leftside">
-    19 : 19 PM <br />
+    {speed} PM <br />
 
 Speed
  </p>

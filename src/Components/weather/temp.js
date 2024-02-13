@@ -2,6 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import "./style.css";
+import Infoweather from './infoweather';
+
+
 const Temp = () => {
 
 const [searchValue, setSearchValue] = useState("Jamshedpur");
@@ -66,8 +69,9 @@ Search
 </button>
 </div>
  </div>
+ {/* passing props */}
+    < Infoweather temperInfo= {temperInfo} />
 
-    
     </>
   )
 }
