@@ -10,7 +10,17 @@ const{temp,
     speed,
     country,
     sunset} = temperInfo; 
+    const [currentTime, setCurrentTime] = useState(new Date().toLocaleString());
 
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        setCurrentTime(new Date().toLocaleString());
+      }, 1000);
+  
+      return () => {
+        clearInterval(intervalId);
+      };
+    }, []);
 
     useEffect(() => {
       if (weatherone){
@@ -66,7 +76,7 @@ let timeStr = `${date.getHours()}:${date.getMinutes()}`;
 </div>
 
 <div className="date">
-{new Date().toLocaleString()}
+{currentTime}
 
 </div>
 
