@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 
 const Infoweather = ({temperInfo}) => {
-
+const [weatherState, setWeatherState] = useState("");
 const{temp,
     humidity,
     pressure,
@@ -10,6 +10,30 @@ const{temp,
     speed,
     country,
     sunset} = temperInfo; 
+
+
+    useEffect(() => {
+      if (weatherone){
+
+        switch(weatherone){
+case "Haze":setWeatherState("wi-day-cloudy")
+    break;
+       
+case "Clouds":setWeatherState("wi-day-fog")
+    break;
+        
+case "Clear":setWeatherState("wi-day-sunny")
+    break;
+        
+case "Mist":setWeatherState("wi-day-dust")
+    break;
+default:
+    setWeatherState("wi-day-sunny");
+    break;
+        }
+      }
+    }, [weatherone]);
+    
 // converting seconds into time
 let sec = sunset;
 let date = new Date(sec*1000);
@@ -21,7 +45,7 @@ let timeStr = `${date.getHours()}:${date.getMinutes()}`;
 
 <article className='widget'>
 <div className="weatherIcon">
-<i className={'wi wi-day-sunny'}>
+<i className={`wi ${weatherState}`}>
 </i>
 
 </div>
@@ -31,7 +55,7 @@ let timeStr = `${date.getHours()}:${date.getMinutes()}`;
 </div>
 <div className="description">
 <div className="weatherCondition">
-Sunny
+{weatherone}
 </div>
 <div className="place">
 {name}, {country}

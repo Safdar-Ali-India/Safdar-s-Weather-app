@@ -11,9 +11,9 @@
 :root {
   --rad: 0.7rem;
   --dur: 0.3s;
-  --color-dark: #2f2f2f;
+  --color-dark: rgb(28 31 38);
   --color-light: #fff;
-  --color-brand: #57bd84;
+  --color-brand: rgb(36 11 171 / 80%);
   --font-fam: "Lato", sans-serif;
   --height: 5rem;
   --btn-width: 6rem;
@@ -63,7 +63,7 @@ body {
 .widget .weatherInfo .temperature {
   flex: 0 0 40%;
   width: 100%;
-  font-size: 65px;
+  font-size: 60px;
   display: flex;
   justify-content: space-around;
   margin-right: 20px;
@@ -87,7 +87,7 @@ body {
 .widget .date {
   flex: 0 0 30%;
   height: 40%;
-  background: #70c1b3;
+  background: rgb(36 11 171 / 80%);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -121,7 +121,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   text-align: center;
   align-items: center;
-  color: #70c1b3;
+  color: rgb(36 11 171 / 80%);
   /* background-color: blanchedalmond; */
 }
 
@@ -154,14 +154,14 @@ body {
 }
 
 .searchTerm:focus {
-  color: #00b4cc;
+  color: rgb(36 11 171 / 80%);
 }
 
 .searchButton {
   width: 80px;
   height: 32px;
   border: none;
-  background: #048b9c;
+  background: rgb(36 11 171 / 80%);
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
@@ -172,7 +172,7 @@ body {
 }
 
 .searchButton:hover {
-  background-color: #17b8ce;
+  background-color: rgb(36 11 171 / 80%);
 }
 
 .wrap {
