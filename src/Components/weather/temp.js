@@ -7,7 +7,7 @@ import Infoweather from './infoweather';
 
 const Temp = () => {
 
-const [searchValue, setSearchValue] = useState("Jamshedpur");
+const [searchValue, setSearchValue] = useState("Bengaluru");
 const [temperInfo, setTempInfo] = useState({});
 
 
